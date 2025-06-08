@@ -9,7 +9,7 @@ export default function LinktreePage() {
     {
       name: "YouTube Channel",
       icon: FaYoutube,
-      url: "https://youtube.com/@neurotypester",
+      url: "youtube://www.youtube.com/@Neurotypester",
       color: "#FF0000",
       hoverColor: "#CC0000",
     },
