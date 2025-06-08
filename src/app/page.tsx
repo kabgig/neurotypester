@@ -1,103 +1,257 @@
+"use client";
+
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Text,
+  VStack,
+  HStack,
+  Icon,
+} from "@chakra-ui/react";
+import { FaTelegram, FaBrain, FaUserMd, FaCalendarAlt } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const handleBookingClick = () => {
+    window.open(
+      "https://t.me/neurotypester_bot",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  return (
+    <Box
+      minH="100vh"
+      bg="white"
+      py={{ base: "8", md: "12", lg: "16" }}
+      px={{ base: "4", md: "6" }}
+    >
+      <Container maxW="4xl" centerContent>
+        <VStack gap={{ base: "8", md: "12" }} align="center" w="100%">
+          {/* Hero Section */}
+          <VStack
+            gap={{ base: "6", md: "8" }}
+            align="center"
+            textAlign="center"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {/* Logo */}
+            <Box
+              position="relative"
+              width={{ base: "120px", md: "150px" }}
+              height={{ base: "120px", md: "150px" }}
+              borderRadius="full"
+              overflow="hidden"
+              shadow="xl"
+              border="4px solid"
+              borderColor="blue.100"
+            >
+              <Image
+                src="/neurotypester_logo.png"
+                alt="Neurotypester Logo"
+                fill
+                style={{
+                  objectFit: "cover",
+                }}
+                priority
+              />
+            </Box>
+
+            {/* Title and Subtitle */}
+            <VStack gap="4" align="center">
+              <Heading
+                as="h1"
+                size={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                fontWeight="black"
+                color="gray.800"
+                letterSpacing="wider"
+              >
+                NEUROTYPESTER
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl" }}
+                color="gray.600"
+                maxW="600px"
+                fontWeight="medium"
+              >
+                Discover Your Unique Neural Architecture Through Scientific
+                Neurotypological Analysis
+              </Text>
+            </VStack>
+          </VStack>
+
+          {/* What is Neurotypology Section */}
+          <Box
+            w="100%"
+            maxW="3xl"
+            shadow="lg"
+            border="1px solid"
+            borderColor="gray.100"
+            borderRadius="2xl"
+            bg="white"
+            p={{ base: "6", md: "8" }}
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <VStack gap="6" align="start">
+              <HStack gap="3">
+                <Icon as={FaBrain} color="blue.500" boxSize="6" />
+                <Heading as="h2" size="xl" color="gray.800">
+                  What is Neurotypology?
+                </Heading>
+              </HStack>
+
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="gray.700"
+                lineHeight="tall"
+              >
+                Neurotypology is a comprehensive scientific approach to
+                understanding individual neural patterns and cognitive
+                architectures. Unlike traditional personality assessments,
+                neurotypological analysis examines the unique wiring of your
+                brain to reveal:
+              </Text>
+
+              <VStack gap="3" align="start" pl="4">
+                <Text color="gray.700">
+                  • <strong>Cognitive Processing Patterns:</strong> How your
+                  brain naturally processes information
+                </Text>
+                <Text color="gray.700">
+                  • <strong>Neural Efficiency Maps:</strong> Your brain&apos;s
+                  optimal performance zones
+                </Text>
+                <Text color="gray.700">
+                  • <strong>Neuroplasticity Potential:</strong> Areas for growth
+                  and development
+                </Text>
+                <Text color="gray.700">
+                  • <strong>Stress Response Patterns:</strong> How your nervous
+                  system handles challenges
+                </Text>
+              </VStack>
+
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="gray.700"
+                lineHeight="tall"
+              >
+                This analysis provides actionable insights for optimizing your
+                mental performance, improving decision-making, and enhancing
+                overall life satisfaction through brain-based personalized
+                strategies.
+              </Text>
+            </VStack>
+          </Box>
+
+          {/* Call to Action Section */}
+          <Box
+            w="100%"
+            maxW="2xl"
+            shadow="xl"
+            bgGradient="linear(to-br, blue.50, purple.50)"
+            border="1px solid"
+            borderColor="blue.200"
+            borderRadius="2xl"
+            p={{ base: "6", md: "8" }}
+            textAlign="center"
+          >
+            <VStack gap="6">
+              <HStack gap="3" justify="center">
+                <Icon as={FaUserMd} color="blue.600" boxSize="6" />
+                <Heading as="h3" size="lg" color="gray.800">
+                  Get Your Personal Analysis
+                </Heading>
+              </HStack>
+
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="gray.700"
+                lineHeight="tall"
+              >
+                Ready to understand your unique neural architecture? Book a
+                personalized neurotypological analysis session via Zoom with our
+                certified specialist.
+              </Text>
+
+              <VStack gap="2" color="gray.600" fontSize="sm">
+                <HStack gap="2">
+                  <Icon as={FaCalendarAlt} />
+                  <Text>60-minute comprehensive analysis</Text>
+                </HStack>
+                <Text>Professional consultation with detailed report</Text>
+                <Text>Personalized recommendations and strategies</Text>
+              </VStack>
+
+              <Button
+                onClick={handleBookingClick}
+                size="lg"
+                height="60px"
+                px="8"
+                bg="blue.500"
+                color="white"
+                fontSize="lg"
+                fontWeight="bold"
+                shadow="lg"
+                _hover={{
+                  bg: "blue.600",
+                  transform: "translateY(-2px)",
+                  shadow: "xl",
+                }}
+                _active={{
+                  transform: "translateY(0)",
+                }}
+                borderRadius="xl"
+                css={{
+                  transition: "all 0.3s ease-in-out",
+                }}
+              >
+                <HStack gap="3">
+                  <Icon as={FaTelegram} boxSize="5" />
+                  <Text>Book Your Analysis</Text>
+                </HStack>
+              </Button>
+
+              <Text fontSize="sm" color="gray.500">
+                Click to start booking via Telegram Bot
+              </Text>
+            </VStack>
+          </Box>
+
+          {/* Footer Links */}
+          <HStack gap="6" wrap="wrap" justify="center" pt="8">
+            <Link href="/linktree" passHref>
+              <Button
+                variant="ghost"
+                size="lg"
+                color="gray.600"
+                _hover={{ color: "blue.600" }}
+              >
+                Social Links
+              </Button>
+            </Link>
+            <Text color="gray.400">•</Text>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://t.me/neurotypester_bot",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+              variant="ghost"
+              size="lg"
+              color="gray.600"
+              _hover={{ color: "blue.600" }}
+              cursor="pointer"
+            >
+              Telegram Bot
+            </Button>
+          </HStack>
+        </VStack>
+      </Container>
+    </Box>
   );
 }
