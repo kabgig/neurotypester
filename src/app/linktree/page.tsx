@@ -3,13 +3,31 @@
 import { Box, Button, Container, Heading, VStack } from "@chakra-ui/react";
 import { FaYoutube, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function LinktreePage() {
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      const userAgent = navigator.userAgent;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+      const isTablet = /iPad|Android(?=.*\bMobile\b)/i.test(userAgent) || 
+                      (navigator.maxTouchPoints > 1 && /Macintosh/i.test(userAgent));
+      
+      setIsMobileOrTablet(isMobile || isTablet);
+    };
+
+    checkDevice();
+  }, []);
+
   const socialLinks = [
     {
       name: "YouTube Channel",
       icon: FaYoutube,
-      url: "youtube://www.youtube.com/@Neurotypester",
+      url: isMobileOrTablet 
+        ? "youtube://www.youtube.com/@Neurotypester" 
+        : "https://youtube.com/@neurotypester",
       color: "#FF0000",
       hoverColor: "#CC0000",
     },
