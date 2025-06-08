@@ -2,6 +2,7 @@
 
 import { Box, Button, Container, Heading, VStack } from "@chakra-ui/react";
 import { FaYoutube, FaInstagram, FaTiktok, FaTelegram } from "react-icons/fa";
+import Image from "next/image";
 
 export default function LinktreePage() {
   const socialLinks = [
@@ -55,15 +56,41 @@ export default function LinktreePage() {
             textAlign="center"
             letterSpacing="wider"
             fontWeight="black"
-            bgGradient="to-r"
-            gradientFrom="purple.500"
-            gradientVia="pink.500"
-            gradientTo="blue.500"
-            bgClip="text"
-            mb={{ base: "4", md: "6" }}
+            color="black"
+            mb={{ base: "2", md: "3" }}
           >
             NEUROTYPESTER
           </Heading>
+
+          {/* Avatar */}
+          <Box
+            position="relative"
+            width={{ base: "120px", md: "150px" }}
+            height={{ base: "120px", md: "150px" }}
+            borderRadius="full"
+            overflow="hidden"
+            shadow="xl"
+            border="4px solid"
+            borderColor="gray.100"
+            mb={{ base: "2", md: "3" }}
+            _hover={{
+              transform: "scale(1.05)",
+              shadow: "2xl",
+            }}
+            css={{
+              transition: "all 0.3s ease-in-out",
+            }}
+          >
+            <Image
+              src="/neurotypester_logo.png"
+              alt="Neurotypester Logo"
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+              priority
+            />
+          </Box>
 
           {/* Social Media Buttons */}
           <VStack gap={{ base: "4", md: "5" }} w="100%" maxW="400px">
