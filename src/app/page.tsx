@@ -43,9 +43,7 @@ export default function Home() {
               position="relative"
               width={{ base: "120px", md: "150px" }}
               height={{ base: "120px", md: "150px" }}
-              borderRadius="full"
               overflow="hidden"
-              shadow="xl"
               border="4px solid"
               borderColor="blue.100"
             >
@@ -84,16 +82,7 @@ export default function Home() {
           </VStack>
 
           {/* What is Neurotypology Section */}
-          <Box
-            w="100%"
-            maxW="3xl"
-            shadow="lg"
-            border="1px solid"
-            borderColor="gray.100"
-            borderRadius="2xl"
-            bg="white"
-            p={{ base: "6", md: "8" }}
-          >
+          <Box w="100%" maxW="3xl" bg="white" p={{ base: "6", md: "8" }}>
             <VStack gap="6" align="start">
               <HStack gap="3">
                 <Icon as={FaBrain} color="blue.500" boxSize="6" />
@@ -150,11 +139,7 @@ export default function Home() {
           <Box
             w="100%"
             maxW="2xl"
-            shadow="xl"
-            bgGradient="linear(to-br, blue.50, purple.50)"
-            border="1px solid"
-            borderColor="blue.200"
-            borderRadius="2xl"
+            bg="white"
             p={{ base: "6", md: "8" }}
             textAlign="center"
           >
@@ -194,16 +179,13 @@ export default function Home() {
                 color="white"
                 fontSize="lg"
                 fontWeight="bold"
-                shadow="lg"
                 _hover={{
                   bg: "blue.600",
                   transform: "translateY(-2px)",
-                  shadow: "xl",
                 }}
                 _active={{
                   transform: "translateY(0)",
                 }}
-                borderRadius="xl"
                 css={{
                   transition: "all 0.3s ease-in-out",
                 }}
@@ -249,6 +231,28 @@ export default function Home() {
             >
               Telegram Bot
             </Button>
+            <Text color="gray.400">•</Text>
+            <Link href="/privacy-policy" passHref>
+              <Button
+                variant="ghost"
+                size="lg"
+                color="gray.600"
+                _hover={{ color: "blue.600" }}
+              >
+                Privacy Policy
+              </Button>
+            </Link>
+            <Text color="gray.400">•</Text>
+            <Link href="/terms-of-service" passHref>
+              <Button
+                variant="ghost"
+                size="lg"
+                color="gray.600"
+                _hover={{ color: "blue.600" }}
+              >
+                Terms of Service
+              </Button>
+            </Link>
           </HStack>
         </VStack>
       </Container>
