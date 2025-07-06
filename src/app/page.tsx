@@ -54,7 +54,7 @@ export default function Home() {
         <Box
           position="absolute"
           top={{ base: "29px", lg: "43px" }}
-          left={{ base: "4", md: "8" }}
+          left={{ base: "4", md: "11" }}
           zIndex={10}
         >
           <Heading
@@ -64,7 +64,7 @@ export default function Home() {
             lineHeight="1.0"
             fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
             fontStretch="semi-condensed"
-            transform="scaleY(1.185)"
+            transform="scaleY(1.185) scaleX(1.05)"
           >
             NEUROTYPE <br />
             ANALYSIS
