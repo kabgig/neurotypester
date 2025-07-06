@@ -97,7 +97,7 @@ export default function Home() {
         {/* CTA Button above divider in right column */}
         <Box
           position="absolute"
-          bottom="80px"
+          bottom="calc(15vh + 20px)"
           right="0"
           px={{ base: "4", md: "8" }}
         >
@@ -129,27 +129,24 @@ export default function Home() {
         {/* Subtitle at bottom before divider */}
         <Box
           position="absolute"
-          bottom="80px"
-          left="0"
+          bottom="calc(15vh + 20px)"
+          left={{ base: "4", md: "8" }}
           right="0"
-          px={{ base: "4", md: "8" }}
         >
-          <Container maxW="8xl">
-            <Text
-              fontSize={{ base: "lg", md: "xl" }}
-              color="gray.700"
-              fontWeight="400"
-              maxW="500px"
-            >
-              Face decoding for optimized brain performance
-            </Text>
-          </Container>
+          <Text
+            fontSize={{ base: "lg", md: "xl" }}
+            color="gray.700"
+            fontWeight="400"
+            maxW="500px"
+          >
+            Face decoding for optimized brain performance
+          </Text>
         </Box>
 
         {/* Divider Line above bottom of first screen */}
         <Box
           position="absolute"
-          bottom="60px"
+          bottom="15vh"
           left="0"
           right="0"
           height="1px"
