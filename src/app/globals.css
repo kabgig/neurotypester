@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Reset for absolute positioning to override Tailwind */
+.photo-positioning-reset * {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

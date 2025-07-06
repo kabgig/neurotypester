@@ -65,34 +65,49 @@ export default function Home() {
 
             {/* Right Side - Image and CTA */}
             <GridItem>
-              <Box
-                display="flex"
-                flexDirection="column"
-                alignItems="flex-end"
-                minH="100vh"
-                pt={{ base: "4", lg: "12" }}
-                pb={{ base: "8", lg: "0" }}
-              >
-                {/* Photo at top */}
-                <Box
-                  position="relative"
-                  width={{ base: "280px", md: "320px", lg: "460px" }}
-                  height={{ base: "350px", md: "400px", lg: "550px" }}
-                >
-                  <Image
-                    src="/ansar_headshot-cropped.jpg"
-                    alt="Ansar Neurotypester"
-                    fill
-                    style={{
-                      objectFit: "contain",
-                    }}
-                    priority
-                  />
-                </Box>
-              </Box>
+              {/* Empty GridItem to maintain layout structure */}
             </GridItem>
           </Grid>
         </Container>
+
+        {/* Photo positioned absolutely at top right */}
+        <Box
+          position="absolute"
+          top="0px"
+          right={{ base: "20px", md: "40px" }}
+          zIndex={10}
+          transform="translateY(0px)"
+          style={{
+            margin: 0,
+            padding: 0,
+          }}
+        >
+          <Box
+            width={{ base: "280px", md: "320px", lg: "460px" }}
+            height={{ base: "350px", md: "400px", lg: "550px" }}
+            style={{
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            <Image
+              src="/ansar_headshot-cropped.jpg"
+              alt="Ansar Neurotypester"
+              width={460}
+              height={550}
+              style={{
+                objectFit: "cover",
+                objectPosition: "top center",
+                width: "100%",
+                height: "100%",
+                margin: 0,
+                padding: 0,
+                display: "block",
+              }}
+              priority
+            />
+          </Box>
+        </Box>
 
         {/* CTA Button above divider in right column */}
         <Box
