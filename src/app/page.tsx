@@ -4,16 +4,14 @@ import {
   Box,
   Button,
   Container,
-  Heading,
-  Text,
-  VStack,
-  HStack,
   Grid,
   GridItem,
+  Heading,
+  Text,
   useBreakpointValue,
+  VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FaTelegram } from "react-icons/fa";
 
 // Force static generation at build time
 export const dynamic = "force-static";
