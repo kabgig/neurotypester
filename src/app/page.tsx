@@ -53,7 +53,7 @@ export default function Home() {
         {/* Title positioned absolutely at top left */}
         <Box
           position="absolute"
-          top={{ base: "28px", lg: "5px" }}
+          top={{ base: "28px", lg: "43px" }}
           left={{ base: "4", md: "8" }}
           zIndex={10}
         >
@@ -61,9 +61,10 @@ export default function Home() {
             as="h1"
             fontSize={{ base: "4xl", md: "6xl", lg: "9xl" }}
             color="black"
-            lineHeight="1.30"
+            lineHeight="1.0"
             fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
-            fontStretch="extra-condensed"
+            fontStretch="semi-condensed"
+            transform="scaleY(1.185)"
           >
             NEUROTYPE <br />
             ANALYSIS
