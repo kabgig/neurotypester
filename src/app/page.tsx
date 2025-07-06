@@ -79,7 +79,7 @@ export default function Home() {
                   fontWeight="400"
                   maxW="500px"
                 >
-                  Face decoding for optimized brain performance
+                  Face decoding for optimized life performance
                 </Text>
               </Box>
 
