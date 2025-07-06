@@ -20,7 +20,7 @@ export const dynamic = "force-static";
 export default function Home() {
   const handleBookingClick = () => {
     window.open(
-      "https://t.me/neurotypester_bot",
+      "https://t.me/neurotypester_bot?text=/start",
       "_blank",
       "noopener,noreferrer"
     );
