@@ -53,21 +53,19 @@ export default function Home() {
         {/* Title positioned absolutely at top left */}
         <Box
           position="absolute"
-          top={{ base: "28px", lg: "28px" }}
+          top={{ base: "28px", lg: "5px" }}
           left={{ base: "4", md: "8" }}
           zIndex={10}
         >
           <Heading
             as="h1"
-            fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
-            fontWeight="100"
+            fontSize={{ base: "4xl", md: "6xl", lg: "9xl" }}
             color="black"
-            lineHeight="0.9"
-            letterSpacing="0.1em"
+            lineHeight="1.30"
             fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
-            fontStretch="condensed"
+            fontStretch="extra-condensed"
           >
-            NEUROTYPOLOGICAL <br />
+            NEUROTYPE <br />
             ANALYSIS
           </Heading>
         </Box>
@@ -75,7 +73,7 @@ export default function Home() {
         {/* Photo positioned absolutely at top right */}
         <Box
           position="absolute"
-          top={{ base: "28px", lg: "28px" }}
+          top={{ base: "28px", lg: "42px" }}
           right={{ base: "20px", md: "40px" }}
           zIndex={10}
           style={{
