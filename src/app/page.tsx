@@ -4,258 +4,272 @@ import {
   Box,
   Button,
   Container,
+  Grid,
+  GridItem,
   Heading,
   Text,
+  useBreakpointValue,
   VStack,
-  HStack,
-  Icon,
 } from "@chakra-ui/react";
-import { FaTelegram, FaBrain, FaUserMd, FaCalendarAlt } from "react-icons/fa";
 import Image from "next/image";
-import Link from "next/link";
+
+// Force static generation at build time
+export const dynamic = "force-static";
 
 export default function Home() {
   const handleBookingClick = () => {
     window.open(
-      "https://t.me/neurotypester_bot",
+      "https://t.me/neurotypester_bot?text=/start",
       "_blank",
       "noopener,noreferrer"
     );
   };
 
-  return (
-    <Box
-      minH="100vh"
-      bg="white"
-      py={{ base: "8", md: "12", lg: "16" }}
-      px={{ base: "4", md: "6" }}
-    >
-      <Container maxW="4xl" centerContent>
-        <VStack gap={{ base: "8", md: "12" }} align="center" w="100%">
-          {/* Hero Section */}
-          <VStack
-            gap={{ base: "6", md: "8" }}
-            align="center"
-            textAlign="center"
-          >
-            {/* Logo */}
-            <Box
-              position="relative"
-              width={{ base: "120px", md: "150px" }}
-              height={{ base: "120px", md: "150px" }}
-              overflow="hidden"
-              border="4px solid"
-              borderColor="blue.100"
-            >
-              <Image
-                src="/neurotypester_logo.png"
-                alt="Neurotypester Logo"
-                fill
-                style={{
-                  objectFit: "cover",
-                }}
-                priority
-              />
-            </Box>
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
-            {/* Title and Subtitle */}
-            <VStack gap="4" align="center">
-              <Heading
-                as="h1"
-                size={{ base: "2xl", md: "3xl", lg: "4xl" }}
-                fontWeight="black"
-                color="gray.800"
-                letterSpacing="wider"
-              >
-                NEUROTYPESTER
-              </Heading>
-              <Text
-                fontSize={{ base: "lg", md: "xl" }}
-                color="gray.600"
-                maxW="600px"
-                fontWeight="medium"
-              >
-                Discover Your Unique Neural Architecture Through Scientific
-                Neurotypological Analysis
-              </Text>
-            </VStack>
-          </VStack>
-
-          {/* What is Neurotypology Section */}
-          <Box w="100%" maxW="3xl" bg="white" p={{ base: "6", md: "8" }}>
-            <VStack gap="6" align="start">
-              <HStack gap="3">
-                <Icon as={FaBrain} color="blue.500" boxSize="6" />
-                <Heading as="h2" size="xl" color="gray.800">
-                  What is Neurotypology?
+  // Mobile Layout - Vertical Stack
+  if (isMobile) {
+    return (
+      <Box bg="gray.50">
+        {/* Mobile First Screen - Hero Section */}
+        <Box minH="100vh" position="relative">
+          <Container maxW="8xl" px="6">
+            <VStack align="center" gap="6" pt="8" pb="calc(15vh + 60px)">
+              {/* Title */}
+              <Box textAlign="center">
+                <Heading
+                  as="h1"
+                  fontSize="3xl"
+                  color="black"
+                  lineHeight="1.0"
+                  fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                  fontStretch="semi-condensed"
+                  transform="scaleY(1.185) scaleX(1.05)"
+                >
+                  NEUROTYPE ANALYSIS
                 </Heading>
-              </HStack>
+              </Box>
 
-              <Text
-                fontSize={{ base: "md", md: "lg" }}
-                color="gray.700"
-                lineHeight="tall"
-              >
-                Neurotypology is a comprehensive scientific approach to
-                understanding individual neural patterns and cognitive
-                architectures. Unlike traditional personality assessments,
-                neurotypological analysis examines the unique wiring of your
-                brain to reveal:
-              </Text>
+              {/* Photo */}
+              <Box mb="0" width="90%">
+                <Image
+                  src="/ansar_headshot-cropped.jpg"
+                  alt="Ansar Neurotypester"
+                  width={280}
+                  height={350}
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "top center",
+                    width: "100%",
+                    height: "auto",
+                    margin: 0,
+                    padding: 0,
+                    display: "block",
+                    borderRadius: "12px",
+                  }}
+                  priority
+                />
+              </Box>
 
-              <VStack gap="3" align="start" pl="4">
-                <Text color="gray.700">
-                  • <strong>Cognitive Processing Patterns:</strong> How your
-                  brain naturally processes information
+              {/* Subtitle */}
+              <Box textAlign="center">
+                <Text
+                  fontSize="lg"
+                  color="gray.700"
+                  fontWeight="400"
+                  maxW="500px"
+                >
+                  Face decoding for optimized brain performance
                 </Text>
-                <Text color="gray.700">
-                  • <strong>Neural Efficiency Maps:</strong> Your brain&apos;s
-                  optimal performance zones
-                </Text>
-                <Text color="gray.700">
-                  • <strong>Neuroplasticity Potential:</strong> Areas for growth
-                  and development
-                </Text>
-                <Text color="gray.700">
-                  • <strong>Stress Response Patterns:</strong> How your nervous
-                  system handles challenges
-                </Text>
-              </VStack>
+              </Box>
 
-              <Text
-                fontSize={{ base: "md", md: "lg" }}
-                color="gray.700"
-                lineHeight="tall"
-              >
-                This analysis provides actionable insights for optimizing your
-                mental performance, improving decision-making, and enhancing
-                overall life satisfaction through brain-based personalized
-                strategies.
-              </Text>
+              {/* CTA Button */}
+              <Box width="90%">
+                <Button
+                  onClick={handleBookingClick}
+                  size="lg"
+                  height="60px"
+                  width="100%"
+                  px="12"
+                  bg="black"
+                  color="white"
+                  fontSize="lg"
+                  fontWeight="bold"
+                  borderRadius="12px"
+                  _hover={{
+                    bg: "gray.800",
+                  }}
+                  _active={{
+                    bg: "gray.900",
+                  }}
+                >
+                  BOOK 1-1 SESSION
+                </Button>
+              </Box>
             </VStack>
-          </Box>
+          </Container>
 
-          {/* Call to Action Section */}
+          {/* Divider Line */}
           <Box
-            w="100%"
-            maxW="2xl"
-            bg="white"
-            p={{ base: "6", md: "8" }}
-            textAlign="center"
+            position="absolute"
+            bottom="15vh"
+            left="0"
+            right="0"
+            height="1px"
+            bg="gray.300"
+          />
+        </Box>
+
+        {/* Second Screen - Empty Container for now */}
+        <Box minH="100vh" bg="white">
+          <Container maxW="8xl" px="4">
+            {/* Second screen content will go here */}
+          </Container>
+        </Box>
+      </Box>
+    );
+  }
+
+  // Desktop/Tablet Layout - UNCHANGED
+  return (
+    <Box bg="gray.50">
+      {/* First Screen - Hero Section */}
+      <Box minH="100vh" position="relative">
+        <Container maxW="8xl" px={{ base: "4", md: "8" }}>
+          <Grid
+            templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+            gap="12"
+            alignItems="start"
+            minH="100vh"
+            py={{ base: "8", lg: "0" }}
           >
-            <VStack gap="6">
-              <HStack gap="3" justify="center">
-                <Icon as={FaUserMd} color="blue.600" boxSize="6" />
-                <Heading as="h3" size="lg" color="gray.800">
-                  Get Your Personal Analysis
-                </Heading>
-              </HStack>
+            {/* Left Side - Text Content */}
+            <GridItem>
+              {/* Empty GridItem to maintain layout structure */}
+            </GridItem>
 
-              <Text
-                fontSize={{ base: "md", md: "lg" }}
-                color="gray.700"
-                lineHeight="tall"
-              >
-                Ready to understand your unique neural architecture? Book a
-                personalized neurotypological analysis session via Zoom with our
-                certified specialist.
-              </Text>
+            {/* Right Side - Image and CTA */}
+            <GridItem>
+              {/* Empty GridItem to maintain layout structure */}
+            </GridItem>
+          </Grid>
+        </Container>
 
-              <VStack gap="2" color="gray.600" fontSize="sm">
-                <HStack gap="2">
-                  <Icon as={FaCalendarAlt} />
-                  <Text>60-minute comprehensive analysis</Text>
-                </HStack>
-                <Text>Professional consultation with detailed report</Text>
-                <Text>Personalized recommendations and strategies</Text>
-              </VStack>
+        {/* Title positioned absolutely at top left */}
+        <Box
+          position="absolute"
+          top={{ base: "29px", lg: "43px" }}
+          left={{ base: "4", md: "11" }}
+          zIndex={10}
+        >
+          <Heading
+            as="h1"
+            fontSize={{ base: "4xl", md: "6xl", lg: "9xl" }}
+            color="black"
+            lineHeight="1.0"
+            fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
+            fontStretch="semi-condensed"
+            transform="scaleY(1.185) scaleX(1.05)"
+          >
+            NEUROTYPE <br />
+            ANALYSIS
+          </Heading>
+        </Box>
 
-              <Button
-                onClick={handleBookingClick}
-                size="lg"
-                height="60px"
-                px="8"
-                bg="blue.500"
-                color="white"
-                fontSize="lg"
-                fontWeight="bold"
-                _hover={{
-                  bg: "blue.600",
-                  transform: "translateY(-2px)",
-                }}
-                _active={{
-                  transform: "translateY(0)",
-                }}
-                css={{
-                  transition: "all 0.3s ease-in-out",
-                }}
-              >
-                <HStack gap="3">
-                  <Icon as={FaTelegram} boxSize="5" />
-                  <Text>Book Your Analysis</Text>
-                </HStack>
-              </Button>
+        {/* Photo positioned absolutely at top right */}
+        <Box
+          position="absolute"
+          top={{ base: "28px", lg: "42px" }}
+          right={{ base: "20px", md: "40px" }}
+          zIndex={10}
+          style={{
+            margin: 0,
+            padding: 0,
+          }}
+        >
+          <Image
+            src="/ansar_headshot-cropped.jpg"
+            alt="Ansar Neurotypester"
+            width={460}
+            height={550}
+            style={{
+              objectFit: "contain",
+              objectPosition: "top center",
+              width: "auto",
+              height: "auto",
+              maxWidth: "460px",
+              maxHeight: "550px",
+              margin: 0,
+              padding: 0,
+              display: "block",
+              borderRadius: "12px",
+            }}
+            priority
+          />
+        </Box>
 
-              <Text fontSize="sm" color="gray.500">
-                Click to start booking via Telegram Bot
-              </Text>
-            </VStack>
-          </Box>
+        {/* CTA Button above divider in right column */}
+        <Box
+          position="absolute"
+          bottom="calc(15vh + 20px)"
+          right={{ base: "20px", md: "40px" }}
+        >
+          <Button
+            onClick={handleBookingClick}
+            size="lg"
+            height="60px"
+            width={{ base: "280px", md: "320px", lg: "460px" }}
+            px="12"
+            bg="black"
+            color="white"
+            fontSize="lg"
+            fontWeight="bold"
+            borderRadius="12px"
+            _hover={{
+              bg: "gray.800",
+            }}
+            _active={{
+              bg: "gray.900",
+            }}
+          >
+            BOOK 1-1 SESSION
+          </Button>
+        </Box>
 
-          {/* Footer Links */}
-          <HStack gap="6" wrap="wrap" justify="center" pt="8">
-            <Link href="/linktree" passHref>
-              <Button
-                variant="ghost"
-                size="lg"
-                color="gray.600"
-                _hover={{ color: "blue.600" }}
-              >
-                Social Links
-              </Button>
-            </Link>
-            <Text color="gray.400">•</Text>
-            <Button
-              onClick={() =>
-                window.open(
-                  "https://t.me/neurotypester_bot",
-                  "_blank",
-                  "noopener,noreferrer"
-                )
-              }
-              variant="ghost"
-              size="lg"
-              color="gray.600"
-              _hover={{ color: "blue.600" }}
-              cursor="pointer"
-            >
-              Telegram Bot
-            </Button>
-            <Text color="gray.400">•</Text>
-            <Link href="/privacy-policy" passHref>
-              <Button
-                variant="ghost"
-                size="lg"
-                color="gray.600"
-                _hover={{ color: "blue.600" }}
-              >
-                Privacy Policy
-              </Button>
-            </Link>
-            <Text color="gray.400">•</Text>
-            <Link href="/terms-of-service" passHref>
-              <Button
-                variant="ghost"
-                size="lg"
-                color="gray.600"
-                _hover={{ color: "blue.600" }}
-              >
-                Terms of Service
-              </Button>
-            </Link>
-          </HStack>
-        </VStack>
-      </Container>
+        {/* Subtitle at bottom before divider */}
+        <Box
+          position="absolute"
+          bottom="calc(15vh + 20px)"
+          left={{ base: "4", md: "8" }}
+          right="0"
+        >
+          <Text
+            fontSize={{ base: "lg", md: "xl" }}
+            color="gray.700"
+            fontWeight="400"
+            maxW="500px"
+          >
+            Face decoding for optimized brain performance
+          </Text>
+        </Box>
+
+        {/* Divider Line above bottom of first screen */}
+        <Box
+          position="absolute"
+          bottom="15vh"
+          left="0"
+          right="0"
+          height="1px"
+          bg="gray.300"
+        />
+      </Box>
+
+      {/* Second Screen - Empty Container for now */}
+      <Box minH="100vh" bg="white">
+        <Container maxW="8xl" px={{ base: "4", md: "8" }}>
+          {/* Second screen content will go here */}
+        </Container>
+      </Box>
     </Box>
   );
 }
