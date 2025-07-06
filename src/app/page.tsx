@@ -10,6 +10,7 @@ import {
   HStack,
   Grid,
   GridItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { FaTelegram } from "react-icons/fa";
@@ -26,6 +27,112 @@ export default function Home() {
     );
   };
 
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  // Mobile Layout - Vertical Stack
+  if (isMobile) {
+    return (
+      <Box bg="gray.50">
+        {/* Mobile First Screen - Hero Section */}
+        <Box minH="100vh" position="relative">
+          <Container maxW="8xl" px="6">
+            <VStack align="center" gap="6" pt="8" pb="calc(15vh + 60px)">
+              {/* Title */}
+              <Box textAlign="center">
+                <Heading
+                  as="h1"
+                  fontSize="3xl"
+                  color="black"
+                  lineHeight="1.0"
+                  fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
+                  fontStretch="semi-condensed"
+                  transform="scaleY(1.185) scaleX(1.05)"
+                >
+                  NEUROTYPE ANALYSIS
+                </Heading>
+              </Box>
+
+              {/* Photo */}
+              <Box mb="0" width="90%">
+                <Image
+                  src="/ansar_headshot-cropped.jpg"
+                  alt="Ansar Neurotypester"
+                  width={280}
+                  height={350}
+                  style={{
+                    objectFit: "contain",
+                    objectPosition: "top center",
+                    width: "100%",
+                    height: "auto",
+                    margin: 0,
+                    padding: 0,
+                    display: "block",
+                    borderRadius: "12px",
+                  }}
+                  priority
+                />
+              </Box>
+
+              {/* Subtitle */}
+              <Box textAlign="center">
+                <Text
+                  fontSize="lg"
+                  color="gray.700"
+                  fontWeight="400"
+                  maxW="500px"
+                >
+                  Face decoding for optimized brain performance
+                </Text>
+              </Box>
+
+              {/* CTA Button */}
+              <Box width="90%">
+                <Button
+                  onClick={handleBookingClick}
+                  size="lg"
+                  height="60px"
+                  width="100%"
+                  px="12"
+                  bg="black"
+                  color="white"
+                  fontSize="lg"
+                  fontWeight="bold"
+                  borderRadius="12px"
+                  _hover={{
+                    bg: "gray.800",
+                  }}
+                  _active={{
+                    bg: "gray.900",
+                  }}
+                >
+                  BOOK 1-1 SESSION
+                </Button>
+              </Box>
+            </VStack>
+          </Container>
+
+          {/* Divider Line */}
+          <Box
+            position="absolute"
+            bottom="15vh"
+            left="0"
+            right="0"
+            height="1px"
+            bg="gray.300"
+          />
+        </Box>
+
+        {/* Second Screen - Empty Container for now */}
+        <Box minH="100vh" bg="white">
+          <Container maxW="8xl" px="4">
+            {/* Second screen content will go here */}
+          </Container>
+        </Box>
+      </Box>
+    );
+  }
+
+  // Desktop/Tablet Layout - UNCHANGED
   return (
     <Box bg="gray.50">
       {/* First Screen - Hero Section */}
