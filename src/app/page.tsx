@@ -53,7 +53,7 @@ export default function Home() {
         {/* Title positioned absolutely at top left */}
         <Box
           position="absolute"
-          top={{ base: "28px", lg: "43px" }}
+          top={{ base: "29px", lg: "43px" }}
           left={{ base: "4", md: "8" }}
           zIndex={10}
         >
@@ -113,12 +113,13 @@ export default function Home() {
             onClick={handleBookingClick}
             size="lg"
             height="60px"
+            width={{ base: "280px", md: "320px", lg: "460px" }}
             px="12"
             bg="black"
             color="white"
             fontSize="lg"
             fontWeight="bold"
-            borderRadius="0"
+            borderRadius="12px"
             _hover={{
               bg: "gray.800",
             }}
