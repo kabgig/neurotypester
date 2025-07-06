@@ -73,40 +73,33 @@ export default function Home() {
         {/* Photo positioned absolutely at top right */}
         <Box
           position="absolute"
-          top="0px"
+          top={{ base: "20px", lg: "12px" }}
           right={{ base: "20px", md: "40px" }}
           zIndex={10}
-          transform="translateY(0px)"
           style={{
             margin: 0,
             padding: 0,
           }}
         >
-          <Box
-            width={{ base: "280px", md: "320px", lg: "460px" }}
-            height={{ base: "350px", md: "400px", lg: "550px" }}
+          <Image
+            src="/ansar_headshot-cropped.jpg"
+            alt="Ansar Neurotypester"
+            width={460}
+            height={550}
             style={{
+              objectFit: "contain",
+              objectPosition: "top center",
+              width: "auto",
+              height: "auto",
+              maxWidth: "460px",
+              maxHeight: "550px",
               margin: 0,
               padding: 0,
+              display: "block",
+              borderRadius: "12px",
             }}
-          >
-            <Image
-              src="/ansar_headshot-cropped.jpg"
-              alt="Ansar Neurotypester"
-              width={460}
-              height={550}
-              style={{
-                objectFit: "cover",
-                objectPosition: "top center",
-                width: "100%",
-                height: "100%",
-                margin: 0,
-                padding: 0,
-                display: "block",
-              }}
-              priority
-            />
-          </Box>
+            priority
+          />
         </Box>
 
         {/* CTA Button above divider in right column */}
