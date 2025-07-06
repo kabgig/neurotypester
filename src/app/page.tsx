@@ -40,27 +40,7 @@ export default function Home() {
           >
             {/* Left Side - Text Content */}
             <GridItem>
-              <VStack
-                align="start"
-                gap="8"
-                maxW="600px"
-                pt={{ base: "4", lg: "12" }}
-              >
-                {/* Main Headline */}
-                <Heading
-                  as="h1"
-                  fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
-                  fontWeight="100"
-                  color="black"
-                  lineHeight="0.9"
-                  letterSpacing="0.1em"
-                  fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
-                  fontStretch="condensed"
-                >
-                  NEUROTYPOLOGICAL <br />
-                  ANALYSIS
-                </Heading>
-              </VStack>
+              {/* Empty GridItem to maintain layout structure */}
             </GridItem>
 
             {/* Right Side - Image and CTA */}
@@ -70,10 +50,32 @@ export default function Home() {
           </Grid>
         </Container>
 
+        {/* Title positioned absolutely at top left */}
+        <Box
+          position="absolute"
+          top={{ base: "28px", lg: "28px" }}
+          left={{ base: "4", md: "8" }}
+          zIndex={10}
+        >
+          <Heading
+            as="h1"
+            fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
+            fontWeight="100"
+            color="black"
+            lineHeight="0.9"
+            letterSpacing="0.1em"
+            fontFamily="'Helvetica Neue', Helvetica, Arial, sans-serif"
+            fontStretch="condensed"
+          >
+            NEUROTYPOLOGICAL <br />
+            ANALYSIS
+          </Heading>
+        </Box>
+
         {/* Photo positioned absolutely at top right */}
         <Box
           position="absolute"
-          top={{ base: "20px", lg: "12px" }}
+          top={{ base: "28px", lg: "28px" }}
           right={{ base: "20px", md: "40px" }}
           zIndex={10}
           style={{
