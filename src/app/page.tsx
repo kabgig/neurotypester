@@ -106,32 +106,27 @@ export default function Home() {
         <Box
           position="absolute"
           bottom="calc(15vh + 20px)"
-          right="0"
-          px={{ base: "4", md: "8" }}
+          right={{ base: "20px", md: "40px" }}
         >
-          <Container maxW="8xl">
-            <Box display="flex" justifyContent="flex-end">
-              <Button
-                onClick={handleBookingClick}
-                size="lg"
-                height="60px"
-                px="12"
-                bg="black"
-                color="white"
-                fontSize="lg"
-                fontWeight="bold"
-                borderRadius="0"
-                _hover={{
-                  bg: "gray.800",
-                }}
-                _active={{
-                  bg: "gray.900",
-                }}
-              >
-                BOOK 1-1 SESSION
-              </Button>
-            </Box>
-          </Container>
+          <Button
+            onClick={handleBookingClick}
+            size="lg"
+            height="60px"
+            px="12"
+            bg="black"
+            color="white"
+            fontSize="lg"
+            fontWeight="bold"
+            borderRadius="0"
+            _hover={{
+              bg: "gray.800",
+            }}
+            _active={{
+              bg: "gray.900",
+            }}
+          >
+            BOOK 1-1 SESSION
+          </Button>
         </Box>
 
         {/* Subtitle at bottom before divider */}
