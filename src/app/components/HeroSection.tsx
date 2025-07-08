@@ -12,12 +12,17 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import MoreArrow from "./MoreArrow";
 
 interface HeroSectionProps {
   handleBookingClick: () => void;
+  handleMoreClick: () => void;
 }
 
-export default function HeroSection({ handleBookingClick }: HeroSectionProps) {
+export default function HeroSection({
+  handleBookingClick,
+  handleMoreClick,
+}: HeroSectionProps) {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   // Mobile Layout - Vertical Stack
@@ -39,8 +44,7 @@ export default function HeroSection({ handleBookingClick }: HeroSectionProps) {
                   fontStretch="semi-condensed"
                   transform="scaleY(1.185) scaleX(1.05)"
                 >
-                  NEUROTYPE <br />
-                  ANALYSIS
+                  NEUROTYPE ANALYSIS
                 </Heading>
               </Box>
 
@@ -112,6 +116,17 @@ export default function HeroSection({ handleBookingClick }: HeroSectionProps) {
             height="1px"
             bg="gray.300"
           />
+
+          {/* MoreArrow Component */}
+          <Box
+            position="absolute"
+            bottom="calc(15vh - 40px)"
+            left="50%"
+            transform="translateX(-50%)"
+            zIndex={10}
+          >
+            <MoreArrow onClick={handleMoreClick} />
+          </Box>
         </Box>
       </Box>
     );
@@ -249,6 +264,17 @@ export default function HeroSection({ handleBookingClick }: HeroSectionProps) {
           height="1px"
           bg="gray.300"
         />
+
+        {/* MoreArrow Component */}
+        <Box
+          position="absolute"
+          bottom="calc(15vh - 40px)"
+          left="50%"
+          transform="translateX(-50%)"
+          zIndex={10}
+        >
+          <MoreArrow onClick={handleMoreClick} />
+        </Box>
       </Box>
     </Box>
   );
