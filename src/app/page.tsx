@@ -3,6 +3,7 @@
 import HeroSection from "./components/HeroSection";
 import SecondScreen from "./components/SecondScreen";
 import { useRef } from "react";
+import ThirdScreen from "./components/ThirdScreen";
 
 // Force static generation at build time
 export const dynamic = "force-static";
@@ -33,6 +34,7 @@ export default function Home() {
       <div ref={secondScreenRef}>
         <SecondScreen />
       </div>
+      <ThirdScreen />
     </>
   );
 }
