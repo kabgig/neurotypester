@@ -134,7 +134,7 @@ export default function SecondScreen() {
         </Grid>
       </Container>
 
-      <Container maxW="8xl" px={{ base: "4", md: "8" }} pt="5">
+      <Container maxW="8xl" px={{ base: "4", md: "8" }} pt="5" pb="12vh">
         <Grid
           templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
           gap="12"
