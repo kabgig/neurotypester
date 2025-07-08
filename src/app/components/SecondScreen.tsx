@@ -10,10 +10,13 @@ import {
   VStack,
   List,
   ListItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
 export default function SecondScreen() {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   return (
     <Box minH="100vh" bg="gray.50" pt="10">
       <Heading
@@ -134,7 +137,12 @@ export default function SecondScreen() {
         </Grid>
       </Container>
 
-      <Container maxW="8xl" px={{ base: "4", md: "8" }} pt="5" pb="12vh">
+      <Container
+        maxW="8xl"
+        px={{ base: "4", md: "8" }}
+        pt={isMobile ? "20" : "0"}
+        pb={isMobile ? "20" : "0"}
+      >
         <Grid
           templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
           gap="12"
@@ -237,14 +245,14 @@ export default function SecondScreen() {
         </Grid>
       </Container>
       {/* Divider Line above bottom of first screen */}
-      <Box
+      {/* <Box
         position="absolute"
-        bottom="7vh"
+        //bottom="7vh"
         left="0"
         right="0"
         height="1px"
         bg="gray.300"
-      />
+      /> */}
     </Box>
   );
 }

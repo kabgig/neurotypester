@@ -9,10 +9,15 @@ import {
   Text,
   VStack,
   AspectRatio,
+  useBreakpointValue,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 export default function ThirdScreen() {
   const videoId = "OW7TH2U4hps"; // Extract video ID from the YouTube URL
+  const [showAll, setShowAll] = useState(false);
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   // Sample data for the video slots
   const videoSlots = Array.from({ length: 8 }, (_, index) => ({
@@ -23,8 +28,12 @@ export default function ThirdScreen() {
     videoId: videoId,
   }));
 
+  // Show only 4 slots on mobile initially, all on desktop
+  const displayedSlots =
+    isMobile && !showAll ? videoSlots.slice(0, 4) : videoSlots;
+
   return (
-    <Box minH="100vh" bg="white" pt="10">
+    <Box minH="100vh" bg="gray.50">
       <Heading
         as="h1"
         fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
@@ -52,7 +61,7 @@ export default function ThirdScreen() {
           gap="6"
           alignItems="start"
         >
-          {videoSlots.map((video) => (
+          {displayedSlots.map((video) => (
             <GridItem key={video.id}>
               <VStack
                 align="stretch"
@@ -103,7 +112,6 @@ export default function ThirdScreen() {
                   color="gray.600"
                   lineHeight="1.4"
                   textAlign="center"
-                  //noOfLines={2}
                 >
                   {video.description}
                 </Text>
@@ -111,6 +119,37 @@ export default function ThirdScreen() {
             </GridItem>
           ))}
         </Grid>
+
+        {/* Show More/Less Button - Only on mobile */}
+        {isMobile && (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            mt="8"
+            cursor="pointer"
+            onClick={() => setShowAll(!showAll)}
+            _hover={{
+              bg: "gray.50",
+            }}
+            transition="background-color 0.2s"
+            p="4"
+            borderRadius="12px"
+          >
+            <VStack gap="2">
+              <Box
+                fontSize="24px"
+                color="gray.600"
+                animation="bounce 2s infinite"
+              >
+                {showAll ? <FiChevronUp /> : <FiChevronDown />}
+              </Box>
+              <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                {showAll ? "Show Less" : "Show More"}
+              </Text>
+            </VStack>
+          </Box>
+        )}
       </Container>
     </Box>
   );
