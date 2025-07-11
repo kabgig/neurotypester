@@ -14,6 +14,9 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 
+//🧲 CTA Under Button:
+// This is not therapy. It’s a decoding session. You’ll walk away with brutal clarity and a strategic map of your own mind.
+
 export default function SecondScreen() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -77,7 +80,7 @@ export default function SecondScreen() {
                     fontWeight="bold"
                     lineHeight="1.2"
                   >
-                    Lorem Ipsum Analysis
+                    🔬 What is Neurotypology?
                   </Heading>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
@@ -85,9 +88,12 @@ export default function SecondScreen() {
                     fontWeight="400"
                     lineHeight="1.6"
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                    Neurotypology is the science of decoding your brain’s
+                    cognitive blueprint through the visible patterns in your
+                    face. <br />
+                    Bone structure, tension, angles — all of it reveals how you
+                    make decisions, handle stress, and sabotage yourself. This
+                    isn’t theory. It’s the manual you never got.
                   </Text>
                 </VStack>
               </GridItem>
@@ -103,13 +109,21 @@ export default function SecondScreen() {
                       fontWeight="bold"
                       mb="4"
                     >
-                      Key Features
+                      💡 Key Features
                     </Text>
                     <List.Root variant="plain" color="gray.700">
-                      <ListItem>• Lorem ipsum dolor sit amet</ListItem>
-                      <ListItem>• Consectetur adipiscing elit</ListItem>
-                      <ListItem>• Sed do eiusmod tempor</ListItem>
-                      <ListItem>• Incididunt ut labore</ListItem>
+                      <ListItem>
+                        • Identifies your natural decision-making style
+                      </ListItem>
+                      <ListItem>
+                        • Maps out cognitive strengths and weak zones
+                      </ListItem>
+                      <ListItem>
+                        • Reveals your stress behavior & coping patterns
+                      </ListItem>
+                      <ListItem>
+                        • Detects work/life misalignment at structural level
+                      </ListItem>
                     </List.Root>
                   </Box>
 
@@ -124,10 +138,18 @@ export default function SecondScreen() {
                       Benefits
                     </Text>
                     <List.Root variant="plain" color="gray.700">
-                      <ListItem>• Dolore magna aliqua</ListItem>
-                      <ListItem>• Ut enim ad minim veniam</ListItem>
-                      <ListItem>• Quis nostrud exercitation</ListItem>
-                      <ListItem>• Ullamco laboris nisi</ListItem>
+                      <ListItem>
+                        • Stop guessing what job, role, or routine fits you
+                      </ListItem>
+                      <ListItem>
+                        • End self-sabotage from internal misalignment
+                      </ListItem>
+                      <ListItem>
+                        • Build systems that actually match your mind
+                      </ListItem>
+                      <ListItem>
+                        • See yourself clearly — maybe for the first time ever
+                      </ListItem>
                     </List.Root>
                   </Box>
                 </VStack>
@@ -185,7 +207,7 @@ export default function SecondScreen() {
                     fontWeight="bold"
                     lineHeight="1.2"
                   >
-                    Lorem Ipsum Analysis
+                    🧬 Neurotypology is facial decoding for brain optimization.
                   </Heading>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
@@ -193,9 +215,13 @@ export default function SecondScreen() {
                     fontWeight="400"
                     lineHeight="1.6"
                   >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                    Your face is a high-resolution map of how your brain works.
+                    <br /> Tension patterns, jaw shape, brow angles — all of it
+                    reflects your natural cognitive mechanics.
+                    <br />
+                    Neurotypology reads that map. And shows you how to stop
+                    fighting your own system. This isn’t astrology. This is
+                    biology — shaped into strategy.
                   </Text>
                 </VStack>
               </GridItem>
@@ -211,13 +237,23 @@ export default function SecondScreen() {
                       fontWeight="bold"
                       mb="4"
                     >
-                      Key Features
+                      ✒️ What You’ll Learn:
                     </Text>
                     <List.Root variant="plain" color="gray.700">
-                      <ListItem>• Lorem ipsum dolor sit amet</ListItem>
-                      <ListItem>• Consectetur adipiscing elit</ListItem>
-                      <ListItem>• Sed do eiusmod tempor</ListItem>
-                      <ListItem>• Incididunt ut labore</ListItem>
+                      <ListItem>
+                        • How your brain actually processes stress, decisions,
+                        and info
+                      </ListItem>
+                      <ListItem>
+                        • Where your natural edge is — and where you keep
+                        short-circuiting
+                      </ListItem>
+                      <ListItem>
+                        • Why your current job/routine is draining you
+                      </ListItem>
+                      <ListItem>
+                        • What structure brings out your highest performance
+                      </ListItem>
                     </List.Root>
                   </Box>
 
@@ -229,13 +265,19 @@ export default function SecondScreen() {
                       fontWeight="bold"
                       mb="4"
                     >
-                      Benefits
+                      🎯 Results People Get:
                     </Text>
                     <List.Root variant="plain" color="gray.700">
-                      <ListItem>• Dolore magna aliqua</ListItem>
-                      <ListItem>• Ut enim ad minim veniam</ListItem>
-                      <ListItem>• Quis nostrud exercitation</ListItem>
-                      <ListItem>• Ullamco laboris nisi</ListItem>
+                      <ListItem>
+                        • Clarity on what career path actually fits
+                      </ListItem>
+                      <ListItem>
+                        • Routines that energize instead of exhaust
+                      </ListItem>
+                      <ListItem>• Less internal conflict, more flow</ListItem>
+                      <ListItem>
+                        • A grounded sense of who the hell they actually are
+                      </ListItem>
                     </List.Root>
                   </Box>
                 </VStack>

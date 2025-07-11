@@ -47,7 +47,7 @@ export default function ThirdScreen() {
         textAlign="center"
         mb="16"
       >
-        CUSTOMER REVIEWS
+        REVIEWS
       </Heading>
 
       <Container maxW="8xl" px={{ base: "4", md: "8" }} pb="12vh">
