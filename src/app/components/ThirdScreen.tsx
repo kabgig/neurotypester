@@ -15,25 +15,76 @@ import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 export default function ThirdScreen() {
-  const videoId = "OW7TH2U4hps"; // Extract video ID from the YouTube URL
   const [showAll, setShowAll] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  // Sample data for the video slots
-  const videoSlots = Array.from({ length: 8 }, (_, index) => ({
-    id: index + 1,
-    title: `Customer Review ${index + 1}`,
-    description:
-      "Amazing experience with the neurotype analysis. Highly recommend!",
-    videoId: videoId,
-  }));
+  // Real customer review videos
+  const videoSlots = [
+    {
+      id: 1,
+      title: "Review by Yaroslav Makarov 🇷🇺",
+      description:
+        "Amazing experience with the neurotype analysis. Highly recommend!",
+      videoId: "aKN0FmFAzBk",
+    },
+    {
+      id: 2,
+      title: "Review by Sergey Goryachkin 🇷🇺",
+      description:
+        "The insights were incredible and helped me understand myself better.",
+      videoId: "upzwTBDuHVE",
+    },
+    // Fill remaining slots with duplicates for now (you can replace with more real reviews later)
+    // {
+    //   id: 3,
+    //   title: "Customer Review 3",
+    //   description:
+    //     "Amazing experience with the neurotype analysis. Highly recommend!",
+    //   videoId: "aKN0FmFAzBk",
+    // },
+    // {
+    //   id: 4,
+    //   title: "Customer Review 4",
+    //   description:
+    //     "The insights were incredible and helped me understand myself better.",
+    //   videoId: "upzwTBDuHVE",
+    // },
+    // {
+    //   id: 5,
+    //   title: "Customer Review 5",
+    //   description:
+    //     "Amazing experience with the neurotype analysis. Highly recommend!",
+    //   videoId: "aKN0FmFAzBk",
+    // },
+    // {
+    //   id: 6,
+    //   title: "Customer Review 6",
+    //   description:
+    //     "The insights were incredible and helped me understand myself better.",
+    //   videoId: "upzwTBDuHVE",
+    // },
+    // {
+    //   id: 7,
+    //   title: "Customer Review 7",
+    //   description:
+    //     "Amazing experience with the neurotype analysis. Highly recommend!",
+    //   videoId: "aKN0FmFAzBk",
+    // },
+    // {
+    //   id: 8,
+    //   title: "Customer Review 8",
+    //   description:
+    //     "The insights were incredible and helped me understand myself better.",
+    //   videoId: "upzwTBDuHVE",
+    // },
+  ];
 
   // Show only 4 slots on mobile initially, all on desktop
   const displayedSlots =
     isMobile && !showAll ? videoSlots.slice(0, 4) : videoSlots;
 
   return (
-    <Box minH="100vh" bg="gray.50">
+    <Box minH="100vh" bg="white" pt="10">
       <Heading
         as="h1"
         fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
