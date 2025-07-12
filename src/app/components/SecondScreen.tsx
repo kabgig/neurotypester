@@ -13,7 +13,7 @@ import {
   useBreakpointValue,
   AspectRatio,
 } from "@chakra-ui/react";
-import Image from "next/image";
+//import Image from "next/image";
 
 //🧲 CTA Under Button:
 // This is not therapy. It’s a decoding session. You’ll walk away with brutal clarity and a strategic map of your own mind.
@@ -170,7 +170,7 @@ export default function SecondScreen() {
           {/* Left Column - Image */}
           <GridItem>
             <Box>
-              <Image
+              {/* <Image
                 src="/1.png"
                 alt="Neurotype Analysis"
                 width={600}
@@ -186,7 +186,7 @@ export default function SecondScreen() {
                   borderRadius: "12px",
                 }}
                 priority
-              />
+              /> */}
             </Box>
           </GridItem>
 

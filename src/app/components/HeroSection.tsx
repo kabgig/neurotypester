@@ -12,7 +12,9 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useState } from "react";
 import MoreArrow from "./MoreArrow";
+import BookingAgreementModal from "./BookingAgreementModal";
 
 interface HeroSectionProps {
   handleBookingClick: () => void;
@@ -24,6 +26,19 @@ export default function HeroSection({
   handleMoreClick,
 }: HeroSectionProps) {
   const isMobile = useBreakpointValue({ base: true, md: false });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleBookingButtonClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleContinueToBooking = () => {
+    handleBookingClick();
+  };
 
   // Mobile Layout - Vertical Stack
   if (isMobile) {
@@ -84,7 +99,7 @@ export default function HeroSection({
               {/* CTA Button */}
               <Box width="90%">
                 <Button
-                  onClick={handleBookingClick}
+                  onClick={handleBookingButtonClick}
                   size="lg"
                   height="60px"
                   width="100%"
@@ -128,6 +143,13 @@ export default function HeroSection({
             <MoreArrow onClick={handleMoreClick} />
           </Box>
         </Box>
+
+        {/* Booking Agreement Modal */}
+        <BookingAgreementModal
+          isOpen={isModalOpen}
+          onClose={handleModalClose}
+          onContinue={handleContinueToBooking}
+        />
       </Box>
     );
   }
@@ -217,7 +239,7 @@ export default function HeroSection({
           right={{ base: "20px", md: "40px" }}
         >
           <Button
-            onClick={handleBookingClick}
+            onClick={handleBookingButtonClick}
             size="lg"
             height="60px"
             width={{ base: "280px", md: "320px", lg: "460px" }}
@@ -276,6 +298,13 @@ export default function HeroSection({
           <MoreArrow onClick={handleMoreClick} />
         </Box>
       </Box>
+
+      {/* Booking Agreement Modal */}
+      <BookingAgreementModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        onContinue={handleContinueToBooking}
+      />
     </Box>
   );
 }

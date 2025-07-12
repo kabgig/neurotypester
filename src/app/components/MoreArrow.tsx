@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Text, VStack } from "@chakra-ui/react";
+import { Box, VStack } from "@chakra-ui/react";
 import { FiChevronDown } from "react-icons/fi";
 
 interface MoreArrowProps {
