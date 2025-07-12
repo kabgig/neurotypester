@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
   useBreakpointValue,
+  AspectRatio,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -44,26 +45,21 @@ export default function SecondScreen() {
           alignItems="start"
           minH="80vh"
         >
-          {/* Left Column - Image */}
+          {/* Left Column - YouTube Video */}
           <GridItem>
             <Box>
-              <Image
-                src="/1.png"
-                alt="Neurotype Analysis"
-                width={600}
-                height={600}
-                style={{
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  width: "100%",
-                  height: "auto",
-                  margin: 0,
-                  padding: 0,
-                  display: "block",
-                  borderRadius: "12px",
-                }}
-                priority
-              />
+              <AspectRatio ratio={16 / 9} borderRadius="12px" overflow="hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/hip1J7_bXLs"
+                  title="How Neurotypology Works"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    border: "none",
+                    borderRadius: "12px",
+                  }}
+                />
+              </AspectRatio>
             </Box>
           </GridItem>
 
@@ -221,7 +217,7 @@ export default function SecondScreen() {
                     <br />
                     Neurotypology reads that map. And shows you how to stop
                     fighting your own system. This isn’t astrology. This is
-                    biology — shaped into strategy.
+                    anatomy — shaped into strategy.
                   </Text>
                 </VStack>
               </GridItem>

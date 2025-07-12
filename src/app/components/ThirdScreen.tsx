@@ -1,15 +1,15 @@
 "use client";
 
 import {
+  AspectRatio,
   Box,
   Container,
   Grid,
   GridItem,
   Heading,
   Text,
-  VStack,
-  AspectRatio,
   useBreakpointValue,
+  VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
@@ -21,27 +21,25 @@ export default function ThirdScreen() {
   // Real customer review videos
   const videoSlots = [
     {
+      id: 3,
+      title: "Review by Silvestras Tamaševskis 🇺🇸",
+      description: "",
+      videoId: "BXekqNKZYLY",
+    },
+    {
       id: 1,
       title: "Review by Yaroslav Makarov 🇷🇺",
-      description:
-        "Amazing experience with the neurotype analysis. Highly recommend!",
+      description: "",
       videoId: "aKN0FmFAzBk",
     },
     {
       id: 2,
       title: "Review by Sergey Goryachkin 🇷🇺",
-      description:
-        "The insights were incredible and helped me understand myself better.",
+      description: "",
       videoId: "upzwTBDuHVE",
     },
     // Fill remaining slots with duplicates for now (you can replace with more real reviews later)
-    // {
-    //   id: 3,
-    //   title: "Customer Review 3",
-    //   description:
-    //     "Amazing experience with the neurotype analysis. Highly recommend!",
-    //   videoId: "aKN0FmFAzBk",
-    // },
+
     // {
     //   id: 4,
     //   title: "Customer Review 4",
