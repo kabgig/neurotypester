@@ -82,7 +82,7 @@ export default function ThirdScreen() {
     isMobile && !showAll ? videoSlots.slice(0, 4) : videoSlots;
 
   return (
-    <Box minH="100vh" bg="white" pt="10">
+    <Box minH="100vh" bg="gray.50" pt="10">
       <Heading
         as="h1"
         fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}

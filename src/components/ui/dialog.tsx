@@ -1,18 +1,23 @@
 "use client";
 
-import { Dialog as ChakraDialog, Portal } from "@chakra-ui/react";
+import {
+  Dialog as ChakraDialog,
+  Portal,
+} from "@chakra-ui/react";
 import * as React from "react";
 
 export interface DialogRootProps extends ChakraDialog.RootProps {
   children: React.ReactNode;
 }
 
-export const DialogRoot = React.forwardRef<HTMLDivElement, DialogRootProps>(
-  function DialogRoot(props) {
-    const { children, ...rest } = props;
-    return <ChakraDialog.Root {...rest}>{children}</ChakraDialog.Root>;
-  }
-);
+export const DialogRoot = function DialogRoot(props: DialogRootProps) {
+  const { children, ...rest } = props;
+  return (
+    <ChakraDialog.Root {...rest}>
+      {children}
+    </ChakraDialog.Root>
+  );
+};
 
 export const DialogBackdrop = React.forwardRef<
   HTMLDivElement,
