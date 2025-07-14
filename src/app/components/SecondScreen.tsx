@@ -198,7 +198,7 @@ export default function SecondScreen() {
                     fontWeight="bold"
                     lineHeight="1.2"
                   >
-                    🧬 Neurotypology is facial decoding for brain optimization.
+                    🧬 Neurotypology is facial decoding for life optimization.
                   </Heading>
                   <Text
                     fontSize={{ base: "md", md: "lg" }}
