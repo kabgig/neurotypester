@@ -170,23 +170,18 @@ export default function SecondScreen() {
           {/* Left Column - Image */}
           <GridItem>
             <Box>
-              {/* <Image
-                src="/1.png"
-                alt="Neurotype Analysis"
-                width={600}
-                height={600}
-                style={{
-                  objectFit: "contain",
-                  objectPosition: "center",
-                  width: "100%",
-                  height: "auto",
-                  margin: 0,
-                  padding: 0,
-                  display: "block",
-                  borderRadius: "12px",
-                }}
-                priority
-              /> */}
+              <AspectRatio ratio={16 / 9} borderRadius="12px" overflow="hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/FOUa1S_NQEk"
+                  title="How Neurotypology Works"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    border: "none",
+                    borderRadius: "12px",
+                  }}
+                />
+              </AspectRatio>
             </Box>
           </GridItem>
 
