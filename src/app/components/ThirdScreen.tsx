@@ -27,6 +27,12 @@ export default function ThirdScreen() {
       videoId: "BXekqNKZYLY",
     },
     {
+      id: 4,
+      title: "Review by Ilya 🇺🇸",
+      description: "",
+      videoId: "02YKT2nGjrQ",
+    },
+    {
       id: 1,
       title: "Review by Yaroslav Makarov 🇷🇺",
       description: "",
@@ -40,13 +46,6 @@ export default function ThirdScreen() {
     },
     // Fill remaining slots with duplicates for now (you can replace with more real reviews later)
 
-    // {
-    //   id: 4,
-    //   title: "Customer Review 4",
-    //   description:
-    //     "The insights were incredible and helped me understand myself better.",
-    //   videoId: "upzwTBDuHVE",
-    // },
     // {
     //   id: 5,
     //   title: "Customer Review 5",
