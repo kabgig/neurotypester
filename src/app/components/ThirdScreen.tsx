@@ -28,7 +28,7 @@ export default function ThirdScreen() {
     },
     {
       id: 4,
-      title: "Review by Ilya 🇺🇸",
+      title: "Review by Ilya Salnikov 🇺🇸",
       description: "",
       videoId: "02YKT2nGjrQ",
     },
